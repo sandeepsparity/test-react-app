@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    section{
+        color: white;
+        border: 1px solid gray;
+        display: flex;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    } 
+    article{
+        border: 1px solid green;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(96 165 250);
+    }
+    .circle{
+        width: 30px;
+        height: 30px;
+        border: 2px solid rgb(226, 232, 240);
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        font-weight: 700;
+        font-variant-caps: petite-caps;
+    }
+
+    @media screen and (max-width: 768px) {
+        section{
+            flex-direction: column
+        } 
+    }
+    #typing-caption{
+        color: goldenrod;
+    }
+</style>
+</head>
+<body>
+    <caption>
+        <h1 id="typing-caption"></h1>
+    </caption>
+    <section>
+        <article>
+            <p class="circle">1</p>
+            <h1>Actionable insights</h1>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias doloribus totam a numquam, expedita id veritatis neque nobis tenetur quas quaerat velit dolore explicabo sint cum? Libero</p>
+        </article>
+        <article>
+            <p class="circle">2</p>
+            <h1>Data-driven decisions</h1>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias doloribus totam a numquam, expedita id veritatis neque nobis tenetur quas quaerat velit dolore explicabo sint cum? Libero perspiciatis illo eum.</p>
+        </article>
+        <article>
+            <p class="circle">3</p>
+            <h1>Always affordable</h1>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias doloribus totam a numquam, expedita id veritatis neque nobis tenetur quas quaerat velit dolore explicabo sint cum? Libero perspiciatis illo eum.</p>
+        </article>
+    </section>
+
+    <script>
+        function createTyping(){
+            let caption = document.getElementById('typing-caption');
+            let typingName = "Sandeep Reddy";
+            let charPos = 0
+            setInterval(()=>{
+                if(caption.innerHTML.length - 1 === typingName.length - 1){
+                    charPos = 0;
+                    caption.innerHTML = '';
+                }
+                caption.innerHTML += typingName[charPos];
+                charPos += 1;
+            }, 300)
+        }
+        createTyping();
+    </script>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Employer</th>
+            <th>Name</th>
+        </thead>
+    </table>
+    
+</body>
+</html>
